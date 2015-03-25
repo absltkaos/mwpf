@@ -1,7 +1,6 @@
 #!/usr/bin/python
 # vim:set et ts=4 sw=4:
 
-#from gevent import monkey; monkey.patch_all()
 import ConfigParser
 import time
 import os
