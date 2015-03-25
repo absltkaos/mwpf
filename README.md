@@ -92,4 +92,4 @@ Then just run run mwpf.py pointed at your mwpf.conf
 ```
 
 And open a browser to where mwpf was configure to listen:
-![Loaded up plugins](https://github.com/absltkaos/mwpf/blob/master/images/loaded_demo.jpg
+![Loaded up plugins](https://github.com/absltkaos/mwpf/blob/master/images/loaded_demo.png
