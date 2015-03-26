@@ -9,7 +9,7 @@ MWPF depends on the following external python modules:
 1. [bottle](http://bottlepy.org/docs/dev/index.html) - For the WSGI application
   * Tested with 0.13-dev
 1. [daemon](https://pypi.python.org/pypi/python-daemon) - For allowing MWPF to run as a daemon
-  * Tested with 2.0.5
+  * Tested with 2.0.5 (This version requires at least [lockfile](https://pypi.python.org/pypi/lockfile) 0.9)
 1. [dynamic_table](https://github.com/absltkaos/python-dynamic-table) - For building and rendering table in text and HTML
   * Tested with 0.8.7
 1. [paste](https://bitbucket.org/ianb/paste) - For the actual WSGI server

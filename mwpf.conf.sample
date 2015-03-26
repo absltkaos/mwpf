@@ -1,4 +1,5 @@
 [global]
+#Note, full paths would be best here and for the pid_file
 project_path=./
 plugins_path=./plugins
 libs_path=./libs
@@ -9,23 +10,28 @@ pid_file=./mwpf.pid
 
 [request_logging]
 #type can be: file, syslog, stdout
-type=file
+type=syslog
 level=info
+#If using type=file, these options control locations and rotation
 filelog_destination=./access.log
 filelog_size_rotate_bytes=52428800
 filelog_size_rotate_num=7
+#If using type=syslog, these options control syslog setup
 #syslog_address can be <ip>:<port> or a string like /dev/log
 syslog_adddress=/dev/log
 syslog_facility=user
 syslog_proto=udp
 
 [application_logging]
-type=file
+#type can be: file, syslog, stdout
+type=syslog
 level=info
 format=%(asctime)s - %(levelname)s - %(message)s
+#If using type=file, these options control locations and rotation
 filelog_destination=./application.log
 filelog_size_rotate_bytes=52428800
 filelog_size_rotate_num=7
+#If using type=syslog, these options control syslog setup
 #syslog_address can be <ip>:<port> or a string like /dev/log
 syslog_adddress=/dev/log
 syslog_facility=user
