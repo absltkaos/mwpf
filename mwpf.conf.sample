@@ -21,6 +21,8 @@ filelog_size_rotate_num=7
 syslog_adddress=/dev/log
 syslog_facility=user
 syslog_proto=udp
+#This is like the program name in syslog
+syslog_identifier=mwpf
 
 [application_logging]
 #type can be: file, syslog, stdout
@@ -36,3 +38,5 @@ filelog_size_rotate_num=7
 syslog_adddress=/dev/log
 syslog_facility=user
 syslog_proto=udp
+#This is like the program name in syslog
+syslog_identifier=mwpf
