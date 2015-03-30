@@ -8,6 +8,10 @@ listen_port=8080
 daemonize=True
 pid_file=./mwpf.pid
 
+#[environment]
+#HTTP_PROXY=https://proxy.localnet:3128
+#HTTPS_PROXY=https://proxy.localnet:3128
+
 [request_logging]
 #type can be: file, syslog, stdout
 type=syslog

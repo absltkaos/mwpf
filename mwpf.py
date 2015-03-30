@@ -119,7 +119,7 @@ for section in conf_req.keys():
             sys.exit(2)
         else:
             config[opt]=conf.get(section,opt)
-
+#Set any config global defaults
 for opt in conf_defaults.keys():
     try:
         if opt == "daemonize":
@@ -128,6 +128,11 @@ for opt in conf_defaults.keys():
             config[opt]=conf.get('global',opt)
     except:
         pass
+
+#Read conf for any environment variables to set.
+if conf.has_section('environment'):
+    for v in conf.options('environment'):
+        os.environ[v]=conf.get('environment',v)
 
 project_path=conf.get('global','project_path')
 plugins_path=conf.get('global','plugins_path')
