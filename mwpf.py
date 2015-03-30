@@ -105,6 +105,8 @@ else:
     REAL_CONFIG=DEFAULT_CONFIG
 
 conf = ConfigParser.RawConfigParser()
+#Make our config case sensitive
+conf.optionxform = str
 
 if conf.read((REAL_CONFIG)) == []:
     print('Could not load config from DEFAULT_CONFIG(%s) or User Supplied CONFIG(%s)' % (DEFAULT_CONFIG,CONFIG))
