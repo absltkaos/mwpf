@@ -54,6 +54,13 @@ def initLogger(logging_conf,logger_name):
     logging_type=logging_conf['type']
     logger=logging.getLogger(logger_name)
     log_formatter=None
+    logging_levels={'debug': logging.DEBUG,
+      'info': logging.INFO,
+      'warning': logging.WARNING,
+      'error': logging.ERROR,
+      'critical': logging.CRITICAL,
+      'notset': logging.NOTSET
+    }
     if logging_conf['format'] or logging_conf['date_format']:
         log_formatter=logging.Formatter(logging_conf['format'],logging_conf['date_format'])
     #Set up our different kinds of loggers
@@ -90,7 +97,15 @@ def initLogger(logging_conf,logger_name):
     if log_formatter:
         logging_handler.setFormatter(log_formatter)
     #Set logging level
-    logger.setLevel(logging_conf['level'].upper())
+    try:
+        #Allow for numeric setting of the log level
+        logger.setLevel(int(logging_conf['level']))
+    except ValueError:
+        #Look up the numeric value passed in our dict (This makes us more compatible with python 2.6
+        try:
+            logger.setLevel(logging_levels[logging_conf['level'].lower()])
+        except:
+            raise
     #Add the logging handler type
     logger.addHandler(logging_handler)
     return logger
